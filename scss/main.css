@@ -1,48 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 body {
   height: 100vh;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 13px;
   margin: 0;
   padding: 0;
-  background: #ecf1f7;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #edf2f8;
 }
 
 .container {
+  margin: 5rem 1.5rem;
   display: -ms-grid;
   display: grid;
   row-gap: 1.5rem;
-  margin: 4rem 1.5rem;
 }
 
-.container .first {
+.first {
   background: #7541c8;
+  color: white;
 }
 
-.container .second {
+.second {
   background: #48556a;
+  color: white;
 }
 
-.container .third {
+.third {
   background: white;
+  color: #48556a;
 }
 
-.container .fourth {
+.fourth {
   background: #19212e;
+  color: white;
 }
 
-.container .fifth {
+.fifth {
   background: white;
-}
-
-.container .gray {
   color: #48556a;
 }
 
 .card {
+  padding: 10%;
   border-radius: 10px;
-  padding: 2rem;
-  color: white;
+  -webkit-box-shadow: 0 0 10px #5c5c5c;
+          box-shadow: 0 0 10px #5c5c5c;
 }
 
 .card .intro {
@@ -52,46 +55,59 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.card .intro .pfp {
-  border: 3px #9d6fdc solid;
-  width: 80%;
+.card .intro .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px #9060d6 solid;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.card .intro .profile .pfp {
+  width: 100%;
   border-radius: 50%;
 }
 
 .card .intro .info {
-  margin-left: 5%;
+  margin-left: 0.8rem;
   line-height: 0.6;
-  font-size: 8px;
 }
 
 .card .intro .info .name {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
 }
 
 .card .intro .info .ed {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 10px;
   opacity: 50%;
 }
 
+.card .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .card .main {
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 5%;
 }
 
 .card .sub {
   opacity: 70%;
-  line-height: 1.5;
 }
 
 @media only screen and (min-width: 1440px) {
   body {
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -103,31 +119,32 @@ body {
             align-items: center;
   }
   .container {
+    margin: 15rem;
     display: -ms-grid;
     display: grid;
+    row-gap: 1.5rem;
     -webkit-column-gap: 1.5rem;
             column-gap: 1.5rem;
-    -ms-grid-rows: 17rem 17rem;
-        grid-template-rows: 17rem 17rem;
-    -ms-grid-columns: 15rem 15rem 15rem 15rem;
-        grid-template-columns: 15rem 15rem 15rem 15rem;
+    -ms-grid-rows: 16.9rem 16.9rem;
+        grid-template-rows: 16.9rem 16.9rem;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   .first {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1 / 3;
   }
-  .second {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3/4;
-  }
   .third {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
     -ms-grid-row: 2;
     grid-row: 2;
+  }
+  .third .section .main {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  .third .sub {
+    line-height: 1.5;
   }
   .fourth {
     -ms-grid-column: 2;
@@ -135,15 +152,25 @@ body {
     grid-column: 2 / 4;
   }
   .fifth {
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 1;
-    grid-column: 4/5;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1 / span 2;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+  }
+  .fifth .section .main {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  .fifth .sub {
+    line-height: 1.5;
   }
   .card {
-    padding: 1.5rem;
+    padding: 5%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px #5c5c5c;
+            box-shadow: 0 0 10px #5c5c5c;
   }
   .card .intro {
     display: -webkit-box;
@@ -154,16 +181,46 @@ body {
             align-items: center;
     margin-bottom: 1rem;
   }
+  .card .intro .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: 3px #9060d6 solid;
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+  .card .intro .profile .pfp {
+    width: 100%;
+    border-radius: 50%;
+  }
   .card .intro .info {
-    margin-left: 2%;
-    line-height: 0.5;
-    font-size: 8px;
+    margin-left: 0.8rem;
+    line-height: 0.6;
+  }
+  .card .intro .info .name {
+    font-size: 12px;
+  }
+  .card .intro .info .ed {
+    font-size: 10px;
+    opacity: 50%;
+  }
+  .card .section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .card .main {
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
   }
   .card .sub {
-    line-height: 1.2;
+    font-size: 0.8rem;
+    opacity: 50%;
   }
 }
 /*# sourceMappingURL=main.css.map */
